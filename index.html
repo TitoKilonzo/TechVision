@@ -48,139 +48,97 @@
             border-radius: 6px;
         }
 
-        /* New Navigation Bar Style - Floating Glassmorphic */
+        /* Enhanced Navigation */
         nav {
             position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 90%;
-            max-width: 1200px;
-            background: rgba(255, 255, 255, 0.85);
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
             z-index: 1000;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            padding: 0.8rem 2rem;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         nav.scrolled {
-            top: 10px;
-            width: 85%;
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            padding: 0.5rem 0;
+            background: rgba(15, 23, 42, 0.98);
         }
 
         .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
-        }
-
-        .nav-left, .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
         }
 
         .logo {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 800;
-            background: var(--gradient-2);
+            background: var(--gradient-1);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.8rem;
             letter-spacing: -0.5px;
-            padding: 0.5rem 1.5rem;
-            background: rgba(6, 182, 212, 0.1);
-            border-radius: 15px;
-            -webkit-background-clip: text;
         }
 
         .logo i {
             -webkit-text-fill-color: var(--accent-color);
-            font-size: 1.8rem;
+            font-size: 2rem;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 0.5rem;
+            gap: 2.5rem;
             align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--dark-color);
+            color: rgba(255, 255, 255, 0.9);
             font-weight: 600;
-            font-size: 0.9rem;
-            padding: 0.6rem 1.2rem;
-            border-radius: 12px;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
+            padding: 0.5rem 0;
         }
 
         .nav-links a::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
             background: var(--gradient-2);
-            transition: left 0.3s ease;
-            z-index: -1;
+            transition: width 0.3s ease;
+            border-radius: 2px;
         }
 
         .nav-links a:hover::before,
         .nav-links a.active::before {
-            left: 0;
+            width: 100%;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: white;
+        .nav-links a:hover {
+            color: var(--accent-color);
             transform: translateY(-2px);
         }
 
         .nav-cta {
             background: var(--gradient-2);
             color: white;
-            padding: 0.7rem 1.5rem;
-            border-radius: 12px;
+            padding: 0.7rem 1.8rem;
+            border-radius: 30px;
             transition: all 0.3s ease;
             font-weight: 700;
             box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .nav-cta::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s ease, height 0.6s ease;
-        }
-
-        .nav-cta:hover::after {
-            width: 300px;
-            height: 300px;
         }
 
         .nav-cta:hover {
@@ -192,35 +150,15 @@
             display: none;
             flex-direction: column;
             cursor: pointer;
-            padding: 0.5rem;
-            background: rgba(6, 182, 212, 0.1);
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .mobile-menu-toggle:hover {
-            background: rgba(6, 182, 212, 0.2);
+            gap: 4px;
         }
 
         .mobile-menu-toggle span {
-            width: 25px;
+            width: 28px;
             height: 3px;
-            background: var(--dark-color);
+            background: white;
             border-radius: 3px;
             transition: 0.3s;
-            margin: 2px 0;
-        }
-
-        .mobile-menu-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
-        }
-
-        .mobile-menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .mobile-menu-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -8px);
         }
 
         /* Hero Section - Personal Branding */
@@ -231,7 +169,6 @@
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
             position: relative;
             overflow: hidden;
-            padding-top: 100px;
         }
 
         .hero::before {
@@ -1097,41 +1034,19 @@
             .contact-content {
                 grid-template-columns: 1fr;
             }
-
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .logo {
-                position: static;
-                transform: none;
-            }
-
-            .nav-left, .nav-right {
-                width: 100%;
-                justify-content: center;
-            }
         }
 
         @media (max-width: 768px) {
-            nav {
-                width: 95%;
-                padding: 1rem;
-            }
-
             .nav-links {
                 display: none;
                 position: absolute;
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background: rgba(255, 255, 255, 0.95);
+                background: rgba(15, 23, 42, 0.98);
                 flex-direction: column;
                 padding: 2rem;
                 box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-                border-radius: 0 0 20px 20px;
-                margin-top: 1rem;
             }
 
             .nav-links.active {
@@ -1175,15 +1090,6 @@
 
             .contact-form {
                 padding: 2rem;
-            }
-
-            .nav-container {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-
-            .nav-left, .nav-right {
-                width: auto;
             }
         }
 
@@ -1237,34 +1143,25 @@
     <div class="loader" id="loader">
         <div class="loader-content">
             <div class="loader-circle"></div>
-            <div class="loader-text">TechVision...</div>
+            <div class="loader-text">Loading Tito's Portfolio...</div>
         </div>
     </div>
 
-    <!-- New Floating Glassmorphic Navigation -->
+    <!-- Enhanced Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="nav-left">
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                </ul>
-            </div>
-            
             <div class="logo">
                 <i class="fas fa-code"></i>
-                Tito Kilonzo
+                Tech Vision
             </div>
-            
-            <div class="nav-right">
-                <ul class="nav-links">
-                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                    <li><a href="#contact" class="nav-cta">Hire Me</a></li>
-                </ul>
-            </div>
-            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#contact" class="nav-cta">Hire Me</a></li>
+            </ul>
             <div class="mobile-menu-toggle" id="mobileMenu">
                 <span></span>
                 <span></span>
@@ -1278,8 +1175,8 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Hi, I'm <span class="highlight">Tito Kilonzo</span></h1>
-                <div class="subtitle">Certified IT Professional & CEO</div>
-                <p>Transforming businesses through innovative IT solutions, cybersecurity expertise, and cutting-edge software development. Let's build future together.</p>
+                <div class="subtitle">Certified IT Professional</div>
+                <p>Transforming businesses through innovative IT solutions, cybersecurity expertise, and cutting-edge software development. Let's build the future together.</p>
                 <div class="hero-buttons">
                     <a href="#services" class="btn btn-primary">
                         <i class="fas fa-briefcase"></i>
@@ -1294,7 +1191,7 @@
             <div class="hero-image">
                 <div class="hero-profile-card">
                     <div class="profile-img">
-                        <img src="https://picsum.photos/seed/itprofessional/200/200" alt="Tito Kilonzo - IT Professional">
+                        <img src="https://picsum.photos/seed/tito/200/200" alt="Tito Kilonzo">
                     </div>
                     <h3>Tito Kilonzo Kinyambu</h3>
                     <div class="role">CEO & Lead IT Consultant</div>
@@ -1383,7 +1280,7 @@
                         <i class="fas fa-chalkboard-teacher"></i>
                     </div>
                     <h3>IT Training & Support</h3>
-                    <p>Empowering teams with skills and knowledge to leverage technology effectively.</p>
+                    <p>Empowering teams with the skills and knowledge to leverage technology effectively.</p>
                     <ul class="service-features">
                         <li><i class="fas fa-check"></i> Microsoft Office Training</li>
                         <li><i class="fas fa-check"></i> Technical Support</li>
@@ -1438,7 +1335,7 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://picsum.photos/seed/itworkspace/600/700" alt="IT Professional Workspace with Modern Technology Setup">
+                    <img src="https://picsum.photos/seed/office/600/700" alt="Professional Workspace">
                     <div class="certification-badge">
                         <h4>IT</h4>
                         <p>Certified Professional</p>
@@ -1453,7 +1350,7 @@
         <div class="container">
             <div class="section-header">
                 <h2>Recent Projects</h2>
-                <p>Explore some of innovative solutions I've delivered for clients</p>
+                <p>Explore some of the innovative solutions I've delivered for clients</p>
             </div>
             <div class="portfolio-filters">
                 <button class="filter-btn active" data-filter="all">All Projects</button>
@@ -1464,7 +1361,7 @@
             <div class="portfolio-grid">
                 <div class="portfolio-item" data-category="security">
                     <div class="portfolio-image">
-                        <img src="https://picsum.photos/seed/firewallsecuritysystem/400/300" alt="Enterprise Security Implementation with Firewall and Security Monitoring Systems">
+                        <img src="https://picsum.photos/seed/security1/400/300" alt="Cybersecurity Implementation">
                         <div class="portfolio-overlay">
                             <h4>Cybersecurity Infrastructure</h4>
                         </div>
@@ -1481,7 +1378,7 @@
                 </div>
                 <div class="portfolio-item" data-category="training">
                     <div class="portfolio-image">
-                        <img src="https://picsum.photos/seed/computertrainingclassroom/400/300" alt="Digital Literacy Training Session with Staff Learning Computer Skills in Office Setting">
+                        <img src="https://picsum.photos/seed/training1/400/300" alt="Digital Literacy Training">
                         <div class="portfolio-overlay">
                             <h4>Digital Literacy Program</h4>
                         </div>
@@ -1498,7 +1395,7 @@
                 </div>
                 <div class="portfolio-item" data-category="development">
                     <div class="portfolio-image">
-                        <img src="https://picsum.photos/seed/mobileappdevelopment/400/300" alt="Custom Mobile Application Development Showing App Screens and Development Process">
+                        <img src="https://picsum.photos/seed/mobile1/400/300" alt="Mobile Application">
                         <div class="portfolio-overlay">
                             <h4>Mobile App Development</h4>
                         </div>
@@ -1515,7 +1412,7 @@
                 </div>
                 <div class="portfolio-item" data-category="security">
                     <div class="portfolio-image">
-                        <img src="https://picsum.photos/seed/networkoptimizationdashboard/400/300" alt="Network Optimization Dashboard Showing Performance Metrics and Network Traffic Analysis">
+                        <img src="https://picsum.photos/seed/network1/400/300" alt="Network Optimization">
                         <div class="portfolio-overlay">
                             <h4>Network Optimization</h4>
                         </div>
@@ -1532,7 +1429,7 @@
                 </div>
                 <div class="portfolio-item" data-category="development">
                     <div class="portfolio-image">
-                        <img src="https://picsum.photos/seed/systemintegrationapi/400/300" alt="System Integration Diagram Showing Multiple Business Systems Connected via APIs">
+                        <img src="https://picsum.photos/seed/system1/400/300" alt="System Integration">
                         <div class="portfolio-overlay">
                             <h4>System Integration</h4>
                         </div>
@@ -1549,7 +1446,7 @@
                 </div>
                 <div class="portfolio-item" data-category="training">
                     <div class="portfolio-image">
-                        <img src="https://picsum.photos/seed/technicalsupportdesk/400/300" alt="IT Technical Support Professional Assisting User with Computer Issues at Help Desk">
+                        <img src="https://picsum.photos/seed/support1/400/300" alt="Technical Support">
                         <div class="portfolio-overlay">
                             <h4>IT Support Services</h4>
                         </div>
@@ -1668,9 +1565,9 @@
                 <div class="social-links">
                     <a href="mailto:info@techvision.com"><i class="fas fa-envelope"></i></a>
                     <a href="tel:+254741563880"><i class="fas fa-phone"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/tito-kinyambu"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/TitoKilonzo"><i class="fab fa-github"></i></a>
+                    <a href="https://x.com/SciTechEnthusia"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
             <div class="footer-section">
@@ -1703,7 +1600,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Tito Kilonzo Kinyambu. All rights reserved. | Privacy Policy | Terms of Service</p>
+            <p>&copy; 2025 TechVision. All rights reserved. | Privacy Policy | Terms of Service</p>
         </div>
     </footer>
 
@@ -1727,7 +1624,6 @@
 
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
         });
 
         // Navbar Scroll Effect
@@ -1822,7 +1718,6 @@
                     });
                     // Close mobile menu if open
                     navLinks.classList.remove('active');
-                    mobileMenu.classList.remove('active');
                 }
             });
         });
